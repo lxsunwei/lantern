@@ -50,7 +50,7 @@ type ConnWithTimings struct {
 // connection's ConnectionState will never get populated. Use DialForTimings to
 // get back a data structure that includes the verified chains.
 func Dial(network, addr string, sendServerName bool, config *tls.Config) (*tls.Conn, error) {
-	return DialTimeout(netx.DialTimeout, 1*time.Minute, network, addr, sendServerName, config)
+	return DialTimeout(netx.DialTimeout, 5*time.Second, network, addr, sendServerName, config)
 }
 
 // Like Dial, but timing out after the given timeout.
